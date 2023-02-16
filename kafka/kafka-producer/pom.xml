@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.microservices.demo</groupId>
         <artifactId>microservices-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>twitter-to-kafka-service</artifactId>
+    <artifactId>kafka-producer</artifactId>
 
     <dependencies>
         <dependency>
@@ -20,40 +20,24 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.twitter4j</groupId>
-            <artifactId>twitter4j-stream</artifactId>
+            <artifactId>spring-boot</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.microservices.demo</groupId>
-            <artifactId>kafka-admin</artifactId>
+            <artifactId>kafka-model</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.microservices.demo</groupId>
-            <artifactId>kafka-producer</artifactId>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
